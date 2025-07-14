@@ -1,5 +1,5 @@
 * {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
 }
@@ -20,32 +20,93 @@ div {
     align-items: center;
     text-align: center;
     padding: 1rem;
+    max-width: auto;
+    min-width: 10px;
 }
-#wingambling{
-    position: absolute;
-    align-self: flex-end;
+#popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: gold;
+  padding: 1rem 2rem;
+  color: black;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  z-index: 9998;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#wingambling {
+
+    z-index: 9999;
+    justify-content: center;
+
+
     transition: 3s ease-in-out;
     display: none;
+}
+
+.objective {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+#instructions {
+    font-size: clamp(0.8rem, 3vw, 1.2rem);
+    max-width: 100%;
+}
+
+.objective {
+    text-align: justify;
+    padding: 1rem;
+    flex-wrap: wrap;
 }
 
 h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 1rem;
-    font-size: 3rem;
-    color: gold;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    border-radius: 10px;
+    border: none;
+    background-color: gold;
+    color: white;
+    padding: 1px;
+    margin: 0.5rem;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    position: relative;
+    color: transparent;
+    background: linear-gradient(90deg,
+            #ffd700 0%,
+            #f9d423 20%,
+            #e2a03f 40%,
+            #f9d423 60%,
+            #ffd700 80%,
+            #f9d423 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+    animation: shine 1s linear infinite;
 }
 
 p {
     padding: 2rem;
-    font-size: 5rem;
+    font-size: clamp(1rem, 6vw, 3rem);
     color: gold;
     margin: 10px;
+    padding: 0px;
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 section {
     display: flex;
+    min-width: 2rem;
+    max-width: 50vw;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -54,18 +115,48 @@ section {
     background-color: rgba(1, 1, 1, 0.2);
 }
 
-
-#slotroll {
+strong {
     border-radius: 10px;
     border: none;
     background-color: gold;
     color: white;
-    padding: 10px;
-    margin: 10px;
-    font-size: 0.5rem;
-       margin: 0.5rem;
     font-family: 'Arial', sans-serif;
-    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    color: transparent;
+    background: linear-gradient(90deg,
+            #ffd700 0%,
+            #f9d423 20%,
+            #e2a03f 40%,
+            #f9d423 60%,
+            #ffd700 80%,
+            #f9d423 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+    animation: shine 1s linear infinite;
+}
+
+#statistics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: solid rgb(61, 83, 61) 1px;
+    border-radius: 10px;
+}
+
+#slotroll {
+    font-size: clamp(3rem, 2rem, 5rem);
+    border-radius: 10px;
+    border: none;
+    background-color: gold;
+    color: white;
+    padding: 1px;
+    margin: 0.5rem;
+    font-family: 'Arial', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     position: relative;
@@ -85,9 +176,10 @@ section {
 }
 
 .slot {
-    margin: 2rem;
+    margin: 1.5rem;
+    flex-direction: column;
     font-family: 'Arial', sans-serif;
-    font-size: 4rem;
+    font-size: clamp(3rem, 6vw, 3rem);
     font-weight: bold;
     text-transform: uppercase;
     position: relative;
@@ -104,6 +196,12 @@ section {
     background-clip: text;
     text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
     animation: shine 1s linear infinite;
+}
+
+.slot:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    transition: 10px;
 }
 
 .slot::before {
@@ -123,7 +221,7 @@ section {
     background-size: 200% auto;
     z-index: -1;
     border-radius: 10px;
-    filter: blur(4px);
+    filter: blur(3px);
     animation: shine 3s linear infinite;
 }
 
@@ -136,14 +234,31 @@ section {
         background-position: 200% center;
     }
 }
-#howtoplay{
-display: none;
-}
-@keyframes move{
-    0%{
+
+@keyframes move {
+    0% {
         rotate: calc(180deg);
     }
-    100%{
+
+    100% {
         rotate: calc(-180deg);
+    }
+}
+
+@media (max-width: 877px) {
+    section {
+        max-width: 90vw;
+    }
+
+    #slotroll {
+        font-size: clamp(2.5rem, 8vw, 5rem);
+    }
+
+    .slot {
+        font-size: 1.8rem;
+    }
+
+    h1 {
+        font-size: 2rem;
     }
 }

@@ -9,11 +9,9 @@
 </head>
 
 <body>
-
-    <div id="howtoplay">
-        <h1>Help?</h1>
     </div>
     <section>
+        <div id="popup" style="display: none;">You won $10,000!</div>
         <h1>Wheel of Fortune </h1>
         <div id="slot-machine">
             <p class="slot" id="slot1">?</p>
@@ -23,6 +21,26 @@
         <button id="slotroll" onclick="rollvalues()">Roll!</button>
         <div>
             <div id="wingambling"><img src="./360_F_107084354_mcnmKH4v75f91VJcHSO6HpfVJlVIcuqF.jpg" alt=""></div>
+        </div>
+        <div class="objective">
+            <p id="instructions">The objective of this Casino is to win as much as possible, there will be a counter of how many times you <strong>rolled</strong> and <strong>won! </strong> this will also give you <strong>money</strong> which you can farm if you want to.
+        </div>
+        <div>
+            <div id="statistics">
+                <div class="slot">
+                    <h1 class="title">Won</h1>
+                    <p class="fixment" id="win-count">0</p>
+                </div>
+                <div class="slot">
+                    <h1>Money</h1>
+                    <p id="money-count">$0</p>
+                </div>
+                <div class="slot">
+                    <h1>Rolled</h1>
+                    <p id="roll-count">0</p>
+
+                </div>
+            </div>
         </div>
     </section>
 </body>
