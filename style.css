@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    scroll-behavior: auto;
+    overflow: hidden;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+#wingambling{
+    position: absolute;
+    align-self: flex-end;
+    transition: 3s ease-in-out;
+    display: none;
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 1rem;
+    font-size: 3rem;
+    color: gold;
+}
+
+p {
+    padding: 2rem;
+    font-size: 5rem;
+    color: gold;
+    margin: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid rgb(61, 83, 61) 1px;
+    border-radius: 15px;
+    background-color: rgba(1, 1, 1, 0.2);
+}
+
+
+#slotroll {
+    border-radius: 10px;
+    border: none;
+    background-color: gold;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    font-size: 0.5rem;
+       margin: 0.5rem;
+    font-family: 'Arial', sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    color: transparent;
+    background: linear-gradient(90deg,
+            #ffd700 0%,
+            #f9d423 20%,
+            #e2a03f 40%,
+            #f9d423 60%,
+            #ffd700 80%,
+            #f9d423 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+    animation: shine 1s linear infinite;
+}
+
+.slot {
+    margin: 2rem;
+    font-family: 'Arial', sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    color: transparent;
+    background: linear-gradient(90deg,
+            #ffd700 0%,
+            #f9d423 20%,
+            #e2a03f 40%,
+            #f9d423 60%,
+            #ffd700 80%,
+            #f9d423 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+    animation: shine 1s linear infinite;
+}
+
+.slot::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(90deg,
+            rgba(255, 215, 0, 0.1) 0%,
+            rgba(249, 212, 35, 0.3) 20%,
+            rgba(226, 160, 63, 0.1) 40%,
+            rgba(249, 212, 35, 0.3) 60%,
+            rgba(255, 215, 0, 0.1) 80%,
+            rgba(249, 212, 35, 0.3) 100%);
+    background-size: 200% auto;
+    z-index: -1;
+    border-radius: 10px;
+    filter: blur(4px);
+    animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+#howtoplay{
+display: none;
+}
+@keyframes move{
+    0%{
+        rotate: calc(180deg);
+    }
+    100%{
+        rotate: calc(-180deg);
+    }
+}
